@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.min.js"></script>
+    <title>L02</title>
+</head>
+
+<body>
+    <h3>v-if和v-for</h3>
+    <div>vue的条件与循环</div>
+    <div id="myApp">
+        <h3>游戏列表</h3>
+        <div v-if="seen">2017最新发售</div>
+        <ol>
+            <li v-for="game in games">{{game.title}} / {{game.price}}元</li>
+        </ol>
+    </div>
+    <script>
+        let myApp = new Vue({
+            el: '#myApp',
+            data: {
+                seen: true,
+                games: [
+                    {title: '勇者斗恶龙',price: 400},
+                    {title: '超级马里奥',price: 300},
+                    {title: '我的世界',price: 90},
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

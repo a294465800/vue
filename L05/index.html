@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.min.js"></script>
+    <title>L05</title>
+</head>
+
+<body>
+    <h3>component</h3>
+    <div>vue中的组件</div>
+    <div id="myApp">
+        <ol>
+            <game-item v-for="item in games" v-bind:game="item"></game-item>
+        </ol>
+    </div>
+    <script>
+        // 定义组件:game-item
+        Vue.component('game-item', {
+            props: ['game'],
+            template: '<li>{{game.title}}</li>'
+        })
+        // Vue对象实例化
+        let myApp = new Vue({
+            el: '#myApp',
+            data: {
+                games: [
+                    {title: '斗地主'},
+                    {title: '打麻雀'},
+                    {title: 'UNO'}
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

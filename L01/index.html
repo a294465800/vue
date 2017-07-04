@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.min.js"></script>
+    <title>L01</title>
+</head>
+
+<body>
+    <h3>双向绑定</h3>
+    <div>vue的开始</div>
+    <div id="myApp">
+        {{message}}
+    </div>
+    <script>
+        var myApp = new Vue({
+            el: '#myApp',
+            data: {
+                message: 'Hello Vue.js!'
+            }
+        })
+    </script>
+</body>
+
+</html>

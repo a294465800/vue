@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.min.js"></script>
+    <title>L04</title>
+</head>
+<body>
+    <h3>v-on</h3>
+    <div>vue中的按钮事件</div>
+    <div id="myApp">
+        <p>您最喜欢的游戏是:{{mygame}}</p>
+        <button v-on:click="btnClick('我的世界')">我的世界</button>
+        <button v-on:click="btnClick('勇者斗恶龙')">勇者斗恶龙</button>
+        <button v-on:click="btnClick('塞尔达传说')">塞尔达传说</button>
+        <button @click="btnClick('魔界战记')">魔界战记</button>
+    </div>
+    <script>
+        let myApp = new Vue({
+            el: '#myApp',
+            data: {
+                mygame: '超级马里奥'
+            },
+            methods: {
+                btnClick(pname){
+                    this.mygame = pname
+                }
+            }
+        })
+    </script>
+</body>
+</html>

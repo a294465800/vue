@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.min.js"></script>
+    <title>L03</title>
+</head>
+<body>
+    <h3>V-model</div>
+    <div>Vue对用户输入的处理</div>
+    <div id="myApp">
+        <p>您最喜欢的游戏是：{{mygame}}</p>
+        <input v-model="mygame">
+    </div>
+    <script>
+        let myApp = new Vue({
+            el: '#myApp',
+            data: {
+                mygame: '超级马里奥'
+            }
+        })
+    </script>
+</body>
+</html>
