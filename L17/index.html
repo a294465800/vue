@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.min.js"></script>
+    <title>L17</title>
+</head>
+<body>
+    <h3>v-model</h3>
+    <div>vue中的表单控件绑定 input[type="text"]</div>
+    <di id="myApp">
+        <h1>表单控件绑定</h1>
+        <input type="text" v-model="message" placeholder="来呀，编辑我吧！">
+        <p>message is: {{message}}</p>
+    </div>
+    <script>
+    let myApp = new Vue({
+        el: '#myApp',
+        data: {
+            message: "我爱马里奥",
+        }
+    })
+    </script>
+</body>
+</html>

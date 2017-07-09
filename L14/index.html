@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.min.js"></script>
+    <title>L14</title>
+</head>
+<body>
+    <h3>v-for</h3>
+    <div>vue中的列表渲染</div>
+    <div id="myApp">
+        <ul>
+            <li v-for="(game, index) in games">({{index}}) {{game.title}} / 售价：{{game.price}}元</li>
+        </ul>
+    </div>
+    <script>
+    let myApp = new Vue({
+        el: '#myApp',
+        data: {
+            games: [
+                {title: "勇者斗恶龙", price: 5000},
+                {title: "跑跑卡丁车", price: 4000},
+                {title: "马里奥世界", price: 500}
+            ]
+        }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.min.js"></script>
+    <title>L12</title>
+</head>
+<body>
+    <h3>v-if,v-else-if,v-else</h3>
+    <div>vue中的条件渲染</div>
+    <div id="myApp">
+        <h1 v-if="result == 0">成绩未公布</h1>
+        <h1 v-else-if="result < 60">{{result}}分 — 考试不及格</h1>
+        <h1 v-else-if="result < 80">{{result}}分 — 还需努力</h1>
+        <h1 v-else>{{result}}分 — 考得不错，玩游戏吧！</h1>
+        <button @click="btnClick">考试成绩</button>
+    </div>
+    <script>
+    let myApp = new Vue({
+        el: '#myApp',
+        data: {
+            result: 0
+        },
+        methods: {
+            btnClick(){
+                this.result = Math.round(Math.random() * 100);
+            }
+        }
+    })
+    </script>
+</body>
+</html>
