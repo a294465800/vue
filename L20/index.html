@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../vue.min.js"></script>
+    <title>L20</title>
+</head>
+<body>
+    <h3>v-model select</h3>
+    <div>vue中的表单下拉框</div>
+    <div id="myApp">
+        <h3>你喜欢的NBA球星是？</h3>
+        <select v-model="likeNBAStar" style="width: 210px;">
+            <option>科比</option>
+            <option>詹姆斯</option>
+            <option>哈金</option>
+            <option>库里</option>
+            <option>杜兰特</option>
+        </select>
+
+        
+        <h3>你喜欢的全明星是？</h3>
+        <select v-model="likeNBAStars" multiple style="width: 210px;">
+            <option>科比</option>
+            <option>詹姆斯</option>
+            <option>哈金</option>
+            <option>库里</option>
+            <option>杜兰特</option>
+        </select>
+
+        <h3>选择结果</h3>
+        <p>我最喜欢的是：{{ likeNBAStar }}</p>
+        <p>我喜欢的全明星：{{ likeNBAStars }}</p>
+    </div>
+    <script>
+    let myApp = new Vue({
+        el: '#myApp',
+        data: {
+            likeNBAStar: "",
+            likeNBAStars: []
+        }
+    })
+    </script>
+</body>
+</html>
