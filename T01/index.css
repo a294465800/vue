@@ -1,0 +1,152 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  position: relative;
+}
+
+.form-wrap {
+  width: 350px;
+  background-color: #fff;
+  position: absolute;
+  right: 10%;
+  top: 200px;
+}
+
+h1,.small {
+  font-weight: normal;
+}
+
+.small {
+  font-size: 16px;
+  color: #555;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.label-control {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-control:focus {
+  outline: 0;
+  border-color: #66afe9;
+}
+
+.input-group {
+  display: table;
+  position: relative;
+  border-collapse: separate;
+}
+
+.input-group .form-control:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group .form-control {
+  display: table-cell;
+}
+
+.input-group-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+  width: 1%;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.input-group-btn:last-child>.btn {
+  z-index: 2;
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-btn>.btn {
+  position: relative;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  line-height: 1.2;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+
+.login-btn {
+  color: #fff!important;
+  background-color: #ff963d!important;
+  border-color: #ff963d!important;
+}
+
+.login-btn:hover {
+  color: #fff;
+  background-color: #e88837;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.success label {
+  color: green!important;
+}
+
+.success input {
+  border-color: green!important;
+}
+
+.error label {
+  color: red!important;
+}
+
+.error input {
+  border-color: red!important;
+}
