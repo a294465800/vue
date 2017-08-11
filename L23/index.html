@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>组件：局部的组件</title>
+</head>
+
+<body>
+  <h3>组件的局部注册</h3>
+  <div id="myApp">
+    <my-weather></my-weather>
+  </div>
+  <script>
+    var myApp = new Vue({
+      el: '#myApp',
+      data: {},
+      components: {
+        'my-weather': {
+          template: '<div>今天下雨，随他去吧！</div>'
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

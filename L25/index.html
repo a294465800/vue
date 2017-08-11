@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>组件的数据函数</title>
+</head>
+
+<body>
+  <h3>为Vue.js组件添加数据，使组件可以动态显示各种数据，注意是数据函数，不是数据属性</h3>
+  <div id="myApp">
+    <div>今天得天气是
+      <today-weather/>
+    </div>
+  </div>
+  <script>
+    Vue.component('today-weather', {
+      template: '<strong>{{todayWeather}}</strong>',
+      data: function () {
+        return {
+          todayWeather: '雨夹雪'
+        }
+      }
+    })
+    var myApp = new Vue({
+      el: '#myApp'
+    })
+  </script>
+</body>
+
+</html>

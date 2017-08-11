@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>组件：传递数据</title>
+</head>
+
+<body>
+  <h3>制作可接收参数的组件</h3>
+  <div id="myApp">
+    <h1>你的成绩评价</h1>
+    <text-result :score="50"></text-result>
+    <text-result :score="65"></text-result>
+    <text-result :score="90"></text-result>
+    <text-result :score="100"></text-result>
+  </div>
+  <script>
+    Vue.component('text-result', {
+      props: ['score'],
+      template: '<div><strong>{{score}}分.{{testResult}}</strong></div>',
+      computed: {
+        testResult: function () {
+          var strResult = ''
+          if (this.score < 60)
+            strResult = '不及格'
+          else if (this.score < 90)
+            strResult = '中等生'
+          else if (this.score <= 100)
+            strResult = '优秀生'
+          return strResult
+        }
+      }
+    })
+    var myApp = new Vue({
+      el: '#myApp'
+    })
+  </script>
+</body>
+
+</html>

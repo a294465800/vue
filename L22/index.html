@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../vue.min.js"></script>
+  <title>组件：基础的基础</title>
+</head>
+
+<body>
+  <h3>组件就是页面上的小块区域内容，完成一个小的页面功能，请参照视频第六课</h3>
+  <div id="myApp">
+    <today-weather></today-weather>
+  </div>
+  <script>
+    Vue.component('today-weather', {
+      template: '<div>今天下雨，出不去啦，干什么呢？看Youtube吧！</div>'
+    })
+    var myApp = new Vue({
+      el: '#myApp',
+    })
+  </script>
+</body>
+
+</html>
