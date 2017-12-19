@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue 测试</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="../vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h1>这是标题：{{h1}}</h1>
+    <p :title="bind">动态绑定数据： v-bind</p>
+    <div style="border: 1px solid #333;min-height: 80px;">
+      <button @click="showFn">点击显示</button>
+      <transition name="fade">
+        <p v-if="seen">Hello</p>
+      </transition>
+    </div>
+    <div>
+      <h3>列表循环</h3>
+      <ol>
+        <li v-for="li in ol" :key="li.id">{{li.name}}</li>
+      </ol>
+    </div>
+    <div>
+      <h3>双向绑定</h3>
+      <p>{{modelValue}}</p>
+      <input type="text" v-model="modelValue">
+    </div>
+    <div>
+      <h3>自定义模版</h3>
+      <ul>
+        <my-item v-for="item in groceryList" :myvalue="item" :key="item.id">我的模版</my-item>
+      </ul>
+    </div>
+    <div>
+      <h3> v-html 指令</h3>
+      <div v-html="html"></div>
+    </div>
+    <div>
+      <h3>计算属性</h3>
+      <div>原来： {{ originComputed }}</div>
+      <div>已计算： {{ computed }}</div>
+      <button @click="addOne">加一</button>
+    </div>
+  </div>
+
+  <script>
+    ! function () {
+      Vue.component('my-item', {
+        template: `<li>这是我的组件！父属性是 {{ myvalue.text }} ；子属性是 {{ childValue }}</li>`,
+        props: ['myvalue'],
+        data() {
+          return {
+            childValue: '啦啦啦'
+          }
+        }
+      })
+
+      var app = new Vue({
+        el: '#app',
+        data: {
+          h1: 'Hello Vue!',
+          bind: '这是绑定的数据' + new Date().toLocaleDateString(),
+          seen: false,
+          ol: [{
+            id: 1,
+            name: '第一条'
+          }, {
+            id: 2,
+            name: '第二条'
+          }, {
+            id: 3,
+            name: '第三条'
+          }],
+          modelValue: 'input',
+
+          groceryList: [{
+              id: 0,
+              text: '蔬菜'
+            },
+            {
+              id: 1,
+              text: '奶酪'
+            },
+            {
+              id: 2,
+              text: '其他人类食物'
+            }
+          ],
+
+          html: `<div>这是 html 渲染</div>`,
+
+          originComputed: 10
+        },
+        computed: {
+          computed() {
+            return this.originComputed + 1
+          }
+        },
+        methods: {
+          showFn() {
+            this.seen = !this.seen
+          },
+
+          addOne() {
+            this.originComputed++
+          }
+        }
+      })
+
+    }()
+  </script>
+</body>
+
+</html>
